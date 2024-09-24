@@ -9,7 +9,7 @@ def get_tasks():
     tasks = Task.query.all()
     return jsonify([{
         'id': task.id,
-        'taskName': task.task_name,
+        'taskName': task.name,
         'dueDate': task.due_date,
         'isCompleted': task.is_completed,
         'subTasks': [{
@@ -28,7 +28,7 @@ def get_today_tasks():
         tasks = Task.query.filter(db.func.date(Task.due_date) == today).all()
         task_list = [{
             "id": t.id,
-            "name": t.task_name, 
+            "name": t.name, 
             "dueDate": t.due_date.isoformat(),
             "completed": t.is_completed 
         } for t in tasks]
@@ -45,7 +45,7 @@ def get_overdue_tasks():
         tasks = Task.query.filter(db.func.date(Task.due_date) < today, Task.is_completed == False).all()
         task_list = [{
             "id": t.id,
-            "name": t.task_name, 
+            "name": t.name, 
             "dueDate": t.due_date.isoformat(),
             "completed": t.is_completed  
         } for t in tasks]
@@ -85,7 +85,7 @@ def update_task(task_id):
         return jsonify({'message': 'Task not found'}), 404
 
     data = request.json
-    task.task_name = data.get('taskName', task.task_name)
+    task.name = data.get('taskName', task.name)
     task.due_date = data.get('dueDate', task.due_date)
     task.is_completed = data.get('isCompleted', task.is_completed)
     
@@ -106,8 +106,8 @@ def delete_task(task_id):
 @bp.route('/subtasks', methods=['POST'])
 def create_subtask():
     data = request.json
-    task_id = data.get('parentId')
-    existing_task = Task.query.get(task_id)
+    id = data.get('parentId')
+    existing_task = Task.query.get(id)
     
     if not existing_task:
         return jsonify({'error': 'Parent task not found'}), 404
@@ -116,7 +116,7 @@ def create_subtask():
         name=data.get('taskName'),
         due_date=data.get('dueDate'),
         is_completed=data.get('isCompleted', False),
-        task_id=task_id
+        task_id=id
     )
     db.session.add(new_subtodo)
     db.session.commit()
@@ -217,7 +217,7 @@ def search_tasks():
     query = request.args.get('query', '').lower()
     results = Task.query.filter(Task.name.ilike(f'%{query}%')).all()
     tasks_list = [
-        {"id": task.id, "name": task.name, "description": task.description, "isCompleted": task.isCompleted}
+        {"id": task.id, "name": task.name, "description": task.description, "isCompleted": task.is_completed}
         for task in results
     ]
 
