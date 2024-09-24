@@ -1,8 +1,33 @@
 from flask import Blueprint, request, jsonify
-from models import db, Task, SubTask, Project
+from models import db, Task, SubTask, Project, User
 from datetime import datetime, date
 
 bp = Blueprint('main', __name__)
+
+@bp.route('/users', methods=['POST'])
+def create_user():
+    try:
+        data = request.json
+        username = data.get('username')
+        email = data.get('email')
+        password = data.get('password')
+        image = data.get('image')  
+
+        if not username or not email or not password:
+            return jsonify({'error': 'Username, email, and password are required'}), 400
+        
+        existing_user = User.query.filter((User.username == username) | (User.email == email)).first()
+        if existing_user:
+            return jsonify({'error': 'Username or email already exists'}), 400
+
+        new_user = User(username=username, email=email, password=password, image=image)
+        db.session.add(new_user)
+        db.session.commit()
+
+        return jsonify({'id': new_user.id, 'username': new_user.username}), 201
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'error': str(e)}), 500
 
 @bp.route('/api/tasks', methods=['GET'])
 def get_tasks():
@@ -57,9 +82,14 @@ def get_overdue_tasks():
 @bp.route('/tasks', methods=['POST'])
 def create_task():
     data = request.json
-    project_id = data.get('project_id')  
+    project_id = data.get('project_id')
+    
     if not project_id:
         return jsonify({'error': 'project_id is required'}), 400
+
+    project = Project.query.get(project_id)
+    if project is None:
+        return jsonify({'error': 'Invalid project_id: Project does not exist'}), 400
 
     new_task = Task(
         name=data.get('name'),
@@ -67,7 +97,7 @@ def create_task():
         due_date=data.get('due_date'),
         is_completed=data.get('is_completed', False),
         priority=data.get('priority', 0),
-        project_id=project_id,  
+        project_id=project_id,
         created_at=datetime.utcnow(),
         updated_at=datetime.utcnow()
     )
@@ -180,11 +210,15 @@ def create_project():
     try:
         data = request.json
         name = data.get('name')
-        
+        user_id = data.get('user_id')  
+
         if not name:
             return jsonify({'error': 'Project name is required'}), 400
 
-        new_project = Project(name=name)
+        if not user_id:  
+            return jsonify({'error': 'User ID is required'}), 400
+
+        new_project = Project(name=name, user_id=user_id)  
         db.session.add(new_project)
         db.session.commit()
 
@@ -192,6 +226,7 @@ def create_project():
     except Exception as e:
         db.session.rollback()
         return jsonify({'error': str(e)}), 500
+
 
 import logging
 from flask import abort
@@ -215,7 +250,13 @@ def delete_project(project_id):
 @bp.route('/search', methods=['GET'])
 def search_tasks():
     query = request.args.get('query', '').lower()
+    print(f"Search query: {query}") 
     results = Task.query.filter(Task.name.ilike(f'%{query}%')).all()
+    
+    print(f"Results found: {len(results)}")  
+    for task in results:
+        print(f"Task: {task.name}") 
+    
     tasks_list = [
         {"id": task.id, "name": task.name, "description": task.description, "isCompleted": task.is_completed}
         for task in results
