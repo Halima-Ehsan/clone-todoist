@@ -171,11 +171,11 @@ def get_projects():
 @bp.route('/api/tasks/completed', methods=['GET'])
 def get_completed_todos():
     try:
-        todos = Task.query.filter_by(completed=True).all()
+        todos = Task.query.filter_by(is_completed=True).all()
         todo_list = [{
             "id": t.id,
             "name": t.name,
-            "completed": t.completed
+            "completed": t.is_completed
         } for t in todos]
         return jsonify(todo_list), 200
     except Exception as e:
@@ -185,11 +185,11 @@ def get_completed_todos():
 @bp.route('/api/tasks/incomplete', methods=['GET'])
 def get_incomplete_task():
     try:
-        todos = Task.query.filter_by(completed=False).all()
+        todos = Task.query.filter_by(is_completed=False).all()
         todo_list = [{
             "id": t.id,
             "name": t.name,
-            "completed": t.completed
+            "completed": t.is_completed
         } for t in todos]
         return jsonify(todo_list), 200
     except Exception as e:
