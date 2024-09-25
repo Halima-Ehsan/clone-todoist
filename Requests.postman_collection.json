@@ -24,7 +24,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/users",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"users"
@@ -51,7 +51,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/tasks",
 					"protocol": "http",
 					"host": [
-						"l66f40e307fba6514c95a867a--clone-todoist"
+						"l66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"tasks"
@@ -78,7 +78,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/projects",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"projects"
@@ -108,7 +108,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/search?query=Test",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"search"
@@ -132,7 +132,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/api/projects",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"api",
@@ -160,7 +160,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/tasks/10",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"tasks",
@@ -188,7 +188,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/subtasks",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"subtasks"
@@ -215,7 +215,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/tasks/11",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"tasks",
@@ -234,7 +234,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/api/tasks",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"api",
@@ -253,7 +253,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/projects/10",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"projects",
@@ -272,7 +272,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/api/tasks/today",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"api",
@@ -292,7 +292,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/api/tasks/overdue",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"api",
@@ -312,7 +312,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/api/tasks/incomplete",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"api",
@@ -332,7 +332,7 @@
 					"raw": "https://66f40e307fba6514c95a867a--clone-todoist.netlify.app/api/tasks/completed",
 					"protocol": "http",
 					"host": [
-						"66f40e307fba6514c95a867a--clone-todoist"
+						"66f40e307fba6514c95a867a--clone-todoist.netlify.app"
 					],
 					"path": [
 						"api",
