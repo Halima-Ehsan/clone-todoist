@@ -39,10 +39,10 @@ def get_tasks():
         'isCompleted': task.is_completed,
         'subTasks': [{
             'id': sub.id,
-            'taskName': sub.task_name,
+            'taskName': sub.name,
             'dueDate': sub.due_date,
             'isCompleted': sub.is_completed,
-        } for sub in task.sub_todos]
+        } for sub in task.subtasks]
     } for task in tasks])
 
 @bp.route('/api/tasks/today', methods=['GET'])
