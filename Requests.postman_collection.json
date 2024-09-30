@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"username\": \"test-user\",\r\n  \"email\": \"test-user@example.com\",\r\n  \"password\": \"password1453\",\r\n  \"image\": \"https://example.com/profile.jpg\"\r\n}\r\n",
+					"raw": "{\r\n  \"username\": \"test1\",\r\n  \"email\": \"test1@example.com\",\r\n  \"password\": \"password123\",\r\n  \"image\": \"https://example.com/profile.jpg\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -41,7 +41,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"project_id\": 1,\r\n  \"name\": \"Important topics\",\r\n  \"description\": \"A description of the task\",\r\n  \"due_date\": \"2024-09-26\",\r\n  \"priority\": 1\r\n}\r\n",
+					"raw": "{\r\n  \"project_id\": 2,\r\n  \"name\": \"Important topics\",\r\n  \"description\": \"A description of the task\",\r\n  \"due_date\": \"2024-10-2\",\r\n  \"priority\": 1\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -69,7 +69,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Wedding Preparations\",\r\n  \"user_id\": 1\r\n}\r\n",
+					"raw": "{\r\n  \"name\": \"Exams\",\r\n  \"user_id\": 1\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -154,7 +154,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"taskName\": \"cards\",\r\n  \"dueDate\": \"2023-09-30\",\r\n  \"isCompleted\": false\r\n}",
+					"raw": "{\r\n  \"taskName\": \"Halls\",\r\n  \"dueDate\": \"2024-09-30\",\r\n  \"isCompleted\": true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -162,7 +162,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/tasks/1",
+					"raw": "http://localhost:5000/tasks/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -170,7 +170,7 @@
 					"port": "5000",
 					"path": [
 						"tasks",
-						"1"
+						"2"
 					]
 				}
 			},
@@ -183,7 +183,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"parentId\": 1,\r\n  \"taskName\": \"Test\",\r\n  \"dueDate\": \"2023-09-30\",\r\n  \"isCompleted\": false\r\n}",
+					"raw": "{\r\n  \"parentId\": 1,\r\n  \"taskName\": \"Catering and Food\",\r\n  \"dueDate\": \"2024-09-30\",\r\n  \"isCompleted\": false\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -211,7 +211,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Halls\",\r\n    \"user_id\": 1\r\n}\r\n\r\n\r\n\r\n",
+					"raw": "{\r\n    \"name\": \"Important topics\",\r\n    \"user_id\": 1\r\n}\r\n\r\n\r\n\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -219,7 +219,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/tasks/2",
+					"raw": "http://127.0.0.1:5000/tasks/3",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -230,7 +230,7 @@
 					"port": "5000",
 					"path": [
 						"tasks",
-						"2"
+						"3"
 					]
 				}
 			},
